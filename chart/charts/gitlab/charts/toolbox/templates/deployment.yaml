@@ -179,6 +179,10 @@ spec:
             {{- include "gitlab.certificates.volumeMount" . | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.lifecycle }}
+          lifecycle:
+            {{- toYaml .Values.lifecycle | nindent 12 }}
+          {{- end }}
       volumes:
       {{- include "gitlab.extraVolumes" . | nindent 6 }}
       {{- include "gitlab.psql.ssl.volume" . | nindent 6 }}

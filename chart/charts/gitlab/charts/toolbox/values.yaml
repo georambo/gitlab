@@ -268,3 +268,11 @@ deployment:
   strategy:
     type: Recreate
     rollingUpdate: null
+
+lifecycle: {}
+# preStop:
+#   exec:
+#     command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /usr/share/message"]
+# postStart:
+#   exec:
+#     command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /usr/share/message"]
